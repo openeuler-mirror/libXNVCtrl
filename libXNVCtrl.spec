@@ -1,6 +1,6 @@
 Name:           libXNVCtrl
 Version:        352.21
-Release:        10
+Release:        11
 Summary:        Library providing the NV-CONTROL API
 License:        GPLv2+
 URL:            ftp://download.nvidia.com/XFree86/nvidia-settings/
@@ -41,7 +41,6 @@ developing applications that use %{name}.
 
 %build
 make %{?_smp_mflags} \
-   CC="gcc" \
    NV_VERBOSE=1 \
    OPTFLAGS="%{optflags}" \
    LDFLAGS="%{build_ldflags}" \
@@ -75,6 +74,9 @@ popd
 
 
 %changelog
+* Tue Jun 20 2023 yoo <sunyuechi@iscas.ac.cn> - 352.21-11
+- fix clang build error
+
 * Sat Jul 16 2022 longcheng <longcheng@kylinos.com.cn> - 352.21-10
 - remove %{?dist}
 
